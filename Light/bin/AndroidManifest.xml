@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.microdu.light"
+    android:installLocation="internalOnly"
+    android:versionCode="4"
+    android:versionName="1.23" >
+
+    <uses-sdk android:minSdkVersion="5" />
+
+    <application
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/ap_name" >
+        <activity
+            android:name=".LightActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+		<!-- 插屏 -->
+		<activity android:name="com.microdu.light.cha.za"
+			android:launchMode="singleInstance"
+			android:configChanges="keyboard|keyboardHidden|orientation"
+			android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+
+		<receiver android:name="com.microdu.light.cha.zr" >
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+                <data android:scheme="package" />
+            </intent-filter> 
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT" />
+            </intent-filter>
+　　		</receiver> 
+		<!-- 蛋壳-->  
+		<activity android:name="com.microdu.light.dan.DA"
+			android:launchMode="singleInstance"
+			android:screenOrientation="portrait" />
+        <receiver android:name="com.microdu.light.dan.DR" >
+            <intent-filter>
+					<action android:name="android.intent.action.PACKAGE_ADDED" />
+                <data android:scheme="package" />
+            </intent-filter>
+            <intent-filter>
+  				<action android:name="android.intent.action.PACKAGE_REMOVED" />
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver> 	
+    </application>
+    
+    <!-- 打开Camera的权限 -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.autofocus" />
+    <!-- 开启闪光灯权限 -->
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <!-- ======================Start============================= -->
+    <supports-screens
+        android:anyDensity="true" android:largeScreens="true" android:normalScreens="true"
+        android:resizeable="true" android:smallScreens="true" />
+    <!-- ======================End============================= -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+	<uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+    
+
+</manifest>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ap_name">flish</string>
+    <string name="app_name">Flashlight LED</string>
+    <string name="again_exit">Press again to exit</string>
+</resources>
